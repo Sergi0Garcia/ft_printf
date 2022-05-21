@@ -6,11 +6,20 @@
 /*   By: segarcia <segarcia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 19:56:00 by segarcia          #+#    #+#             */
-/*   Updated: 2022/05/21 19:56:12 by segarcia         ###   ########.fr       */
+/*   Updated: 2022/05/21 20:17:36 by segarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int main ()
+#include <unistd.h>
+
+int	print_char(int c)
 {
+	write(1, &c, 1);
+	return (1);
+}
+
+int	main(void)
+{
+	print_char('C');
 	return (0);
 }
