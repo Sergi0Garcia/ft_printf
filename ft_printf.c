@@ -6,7 +6,7 @@
 /*   By: segarcia <segarcia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 11:14:54 by segarcia          #+#    #+#             */
-/*   Updated: 2022/06/08 11:29:12 by segarcia         ###   ########.fr       */
+/*   Updated: 2022/06/08 12:19:34 by segarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,20 @@
 
 int	ft_handler(va_list args, const char format)
 {
+	int	print_len;
+
+	print_len = 0;
 	if (format == '%')
-		print_char('%');
+		print_len += print_char('%');
 	if (format == 'c')
-		print_char(va_arg(args, int));
+		print_len += print_char(va_arg(args, int));
 	if (format == 's')
-		print_str(va_arg(args, char *));
+		print_len += print_str(va_arg(args, char *));
 	if (format == 'i' || format == 'd')
-		ft_printf_int(va_arg(args, int));
+		print_len += ft_printf_int(va_arg(args, int));
 	if (format == 'u')
-		ft_printf_uint(va_arg(args, unsigned int));
-	return (0);
+		print_len += ft_printf_uint(va_arg(args, unsigned int));
+	return (print_len);
 }
 
 int	ft_printf(const char *str, ...)
@@ -41,11 +44,11 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[i] == '%')
 		{
-			ft_handler(arg , str[i + 1]);
+			str_length += ft_handler(arg , str[i + 1]);
 			i++;
 		}
 		else
-			print_char(str[i]);
+			str_length += print_char(str[i]);
 		i++;
 	}
 	va_end(arg);
