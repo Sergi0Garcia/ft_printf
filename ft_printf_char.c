@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printf_char.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: segarcia <segarcia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/21 19:56:00 by segarcia          #+#    #+#             */
-/*   Updated: 2022/05/21 20:17:36 by segarcia         ###   ########.fr       */
+/*   Created: 2022/05/27 11:18:57 by segarcia          #+#    #+#             */
+/*   Updated: 2022/06/08 09:47:15 by segarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_printf.h"
 
 int	print_char(int c)
 {
 	write(1, &c, 1);
 	return (1);
-}
-
-int	main(void)
-{
-	print_char('C');
-	return (0);
 }
