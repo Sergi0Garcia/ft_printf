@@ -6,7 +6,7 @@
 /*   By: segarcia <segarcia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 11:14:54 by segarcia          #+#    #+#             */
-/*   Updated: 2022/06/08 12:26:57 by segarcia         ###   ########.fr       */
+/*   Updated: 2022/06/08 13:38:54 by segarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	ft_handler(va_list args, const char format)
 		print_len += ft_printf_int(va_arg(args, int));
 	if (format == 'u')
 		print_len += ft_printf_uint(va_arg(args, unsigned int));
+	if (format == 'x' || format == 'X')
+		print_len += ft_printf_hex(va_arg(args, unsigned int), format);
 	return (print_len);
 }
 
