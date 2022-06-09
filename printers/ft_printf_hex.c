@@ -6,13 +6,13 @@
 /*   By: segarcia <segarcia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:13:14 by segarcia          #+#    #+#             */
-/*   Updated: 2022/06/09 14:27:18 by segarcia         ###   ########.fr       */
+/*   Updated: 2022/06/09 14:50:21 by segarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-static int	n_len(unsigned int n)
+static int	n_len_hex(unsigned int n)
 {
 	unsigned int	len;
 
@@ -31,7 +31,7 @@ int	ft_printf_hex(unsigned int n, char format)
 
 	if (n == 0)
 		return (ft_printf_char('0'));
-	len = n_len(n);
+	len = n_len_hex(n);
 	if (n >= 16)
 	{
 		ft_printf_hex(n / 16, format);
@@ -39,7 +39,7 @@ int	ft_printf_hex(unsigned int n, char format)
 	}
 	else
 	{
-		if (n <= 9)
+		if (n < 10)
 			ft_printf_char(n + '0');
 		else
 		{
