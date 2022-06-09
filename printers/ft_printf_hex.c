@@ -6,11 +6,11 @@
 /*   By: segarcia <segarcia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:13:14 by segarcia          #+#    #+#             */
-/*   Updated: 2022/06/09 13:04:08 by segarcia         ###   ########.fr       */
+/*   Updated: 2022/06/09 14:27:18 by segarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
 static int	n_len(unsigned int n)
 {
@@ -30,7 +30,7 @@ int	ft_printf_hex(unsigned int n, char format)
 	unsigned int	len;
 
 	if (n == 0)
-		return (print_char('0'));
+		return (ft_printf_char('0'));
 	len = n_len(n);
 	if (n >= 16)
 	{
@@ -40,13 +40,13 @@ int	ft_printf_hex(unsigned int n, char format)
 	else
 	{
 		if (n <= 9)
-			print_char(n + '0');
+			ft_printf_char(n + '0');
 		else
 		{
 			if (format == 'x')
-				print_char(n - 10 + 'a');
+				ft_printf_char(n - 10 + 'a');
 			if (format == 'X')
-				print_char(n - 10 + 'A');
+				ft_printf_char(n - 10 + 'A');
 		}
 	}
 	return (len);

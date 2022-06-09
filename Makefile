@@ -6,12 +6,19 @@
 #    By: segarcia <segarcia@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/27 11:20:39 by segarcia          #+#    #+#              #
-#    Updated: 2022/06/09 13:05:00 by segarcia         ###   ########.fr        #
+#    Updated: 2022/06/09 14:35:09 by segarcia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			=	ft_itoa.c ft_printf_char.c ft_printf_int.c ft_printf_uint.c ft_printf_str.c \
-					ft_printf.c ft_uitoa.c ft_printf_hex.c ft_printf_ptr.c
+SRCS			=	utils/ft_itoa.c 			\
+					utils/ft_itoau.c 			\
+					printers/ft_printf_char.c	\
+					printers/ft_printf_hex.c	\
+					printers/ft_printf_int.c	\
+					printers/ft_printf_intu.c	\
+					printers/ft_printf_ptr.c	\
+					printers/ft_printf_str.c	\
+					ft_printf.c
 
 OBJS			= $(SRCS:.c=.o)
 

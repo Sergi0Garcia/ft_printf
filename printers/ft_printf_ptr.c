@@ -6,11 +6,11 @@
 /*   By: segarcia <segarcia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 10:59:51 by segarcia          #+#    #+#             */
-/*   Updated: 2022/06/09 12:57:01 by segarcia         ###   ########.fr       */
+/*   Updated: 2022/06/09 14:28:21 by segarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
 static int	n_len(uintptr_t n)
 {
@@ -35,9 +35,9 @@ static void	ft_putptr(uintptr_t n)
 	else
 	{
 		if (n <= 9)
-			print_char(n + '0');
+			ft_printf_char(n + '0');
 		else
-			print_char(n - 10 + 'a');
+			ft_printf_char(n - 10 + 'a');
 	}
 }
 
@@ -45,11 +45,11 @@ int	ft_printf_ptr(unsigned long long ptr)
 {
 	int	len;
 
-	print_char('0');
-	print_char('x');
+	ft_printf_char('0');
+	ft_printf_char('x');
 	len = 2;
 	if (ptr == 0)
-		len += print_char('0');
+		len += ft_printf_char('0');
 	else
 	{
 		ft_putptr(ptr);

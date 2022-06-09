@@ -6,13 +6,13 @@
 /*   By: segarcia <segarcia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 11:18:57 by segarcia          #+#    #+#             */
-/*   Updated: 2022/06/09 13:04:05 by segarcia         ###   ########.fr       */
+/*   Updated: 2022/06/09 14:32:55 by segarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
-int	print_char(int c)
+int	ft_printf_char(int c)
 {
 	write(1, &c, 1);
 	return (1);

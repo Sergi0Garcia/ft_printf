@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_itoau.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: segarcia <segarcia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 11:38:56 by segarcia          #+#    #+#             */
-/*   Updated: 2022/06/09 13:32:32 by segarcia         ###   ########.fr       */
+/*   Created: 2022/06/08 11:21:53 by segarcia          #+#    #+#             */
+/*   Updated: 2022/06/09 14:20:37 by segarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
 static int	n_len(unsigned int n)
 {
@@ -25,21 +25,6 @@ static int	n_len(unsigned int n)
 	return (len);
 }
 
-static void	validate_sign(int n, unsigned int *num, int *is_neg, int *len)
-{
-	*is_neg = 0;
-	*len = 0;
-	*num = n;
-	if (n < 0)
-	{
-		*num = n * -1;
-		*is_neg = 1;
-	}
-	*len = n_len(*num);
-	if (n == 0)
-		*len = 1;
-}
-
 static char	*handle_zero(char *str)
 {
 	str[0] = '0';
@@ -47,29 +32,29 @@ static char	*handle_zero(char *str)
 	return (str);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoau(int n)
 {
 	size_t			i;
 	char			*str;
 	int				len;
-	int				is_neg;
 	unsigned int	num;
 
 	i = 0;
-	validate_sign(n, &num, &is_neg, &len);
-	str = (char *)malloc(len + is_neg + 1);
+	num = n;
+	len = n_len(n);
+	if (n == 0)
+		len = 1;
+	str = (char *)malloc(len + 1);
 	if (!str)
 		return (NULL);
 	if (n == 0)
 		return (handle_zero(str));
-	if (is_neg)
-		str[0] = '-';
 	while (num != 0)
 	{
-		str[len - i - !is_neg] = (num % 10) + '0';
+		str[len - i - 1] = (num % 10) + '0';
 		num = num / 10;
 		i++;
 	}
-	str[len + is_neg] = 0;
+	str[len] = 0;
 	return (str);
 }

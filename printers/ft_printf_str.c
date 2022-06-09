@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: segarcia <segarcia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 11:16:28 by segarcia          #+#    #+#             */
-/*   Updated: 2022/06/09 13:23:37 by segarcia         ###   ########.fr       */
+/*   Created: 2022/06/08 10:00:58 by segarcia          #+#    #+#             */
+/*   Updated: 2022/06/09 14:28:35 by segarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../include/ft_printf.h"
 
-# include <stdarg.h>
-# include <unistd.h>
+int	ft_printf_str(const char *str)
+{
+	int	i;
 
-int		ft_printf(const char *str, ...);
-int		print_char(int c);
-int		print_str(const char *str);
-char	*ft_itoa(int n);
-char	*ft_uitoa(int n);
-int		ft_printf_int(int n);
-int		ft_printf_uint(unsigned int n);
-int		ft_printf_hex(unsigned int n, char format);
-int		ft_printf_ptr(unsigned long long ptr);
-
-#endif
+	i = 0;
+	if (!str)
+	{
+		ft_printf_char('(');
+		ft_printf_char('n');
+		ft_printf_char('u');
+		ft_printf_char('l');
+		ft_printf_char('l');
+		ft_printf_char(')');
+		return (6);
+	}
+	while (str[i])
+	{
+		ft_printf_char(str[i]);
+		i++;
+	}
+	return (i);
+}

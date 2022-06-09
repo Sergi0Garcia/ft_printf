@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_int.c                                    :+:      :+:    :+:   */
+/*   ft_printf_intu.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: segarcia <segarcia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/08 10:32:54 by segarcia          #+#    #+#             */
-/*   Updated: 2022/06/09 13:04:17 by segarcia         ###   ########.fr       */
+/*   Created: 2022/06/08 11:06:23 by segarcia          #+#    #+#             */
+/*   Updated: 2022/06/09 14:27:53 by segarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
-int	ft_printf_int(int n)
+int	ft_printf_intu(unsigned int n)
 {
 	char	*num;
 	int		len;
 
 	len = 0;
-	num = ft_itoa(n);
-	len = print_str(num);
+	num = ft_itoau(n);
+	len = ft_printf_str(num);
 	free(num);
 	return (len);
 }
