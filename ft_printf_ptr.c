@@ -6,13 +6,13 @@
 /*   By: segarcia <segarcia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 10:59:51 by segarcia          #+#    #+#             */
-/*   Updated: 2022/06/09 12:18:26 by segarcia         ###   ########.fr       */
+/*   Updated: 2022/06/09 12:57:01 by segarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int n_len(uintptr_t n)
+static int	n_len(uintptr_t n)
 {
 	int	len;
 
@@ -49,10 +49,7 @@ int	ft_printf_ptr(unsigned long long ptr)
 	print_char('x');
 	len = 2;
 	if (ptr == 0)
-	{
-		print_char('0');
-		len += 1;
-	}
+		len += print_char('0');
 	else
 	{
 		ft_putptr(ptr);

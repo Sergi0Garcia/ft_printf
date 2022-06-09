@@ -6,7 +6,7 @@
 /*   By: segarcia <segarcia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 10:32:54 by segarcia          #+#    #+#             */
-/*   Updated: 2022/06/08 13:29:53 by segarcia         ###   ########.fr       */
+/*   Updated: 2022/06/09 12:55:38 by segarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_printf_int(int n)
 {
-	char *num;
-	int	len;
+	char	*num;
+	int		len;
 
 	len = 0;
 	num = ft_itoa(n);

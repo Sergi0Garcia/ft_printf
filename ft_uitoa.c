@@ -6,10 +6,9 @@
 /*   By: segarcia <segarcia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 11:21:53 by segarcia          #+#    #+#             */
-/*   Updated: 2022/06/08 11:21:58 by segarcia         ###   ########.fr       */
+/*   Updated: 2022/06/09 12:58:57 by segarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "ft_printf.h"
 

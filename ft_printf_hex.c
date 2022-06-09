@@ -6,7 +6,7 @@
 /*   By: segarcia <segarcia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 13:13:14 by segarcia          #+#    #+#             */
-/*   Updated: 2022/06/08 13:54:33 by segarcia         ###   ########.fr       */
+/*   Updated: 2022/06/09 12:54:43 by segarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,12 @@ static int	n_len(unsigned int n)
 	return (len);
 }
 
-int ft_printf_hex(unsigned int n, char format)
+int	ft_printf_hex(unsigned int n, char format)
 {
-	unsigned int len;
+	unsigned int	len;
 
-	len = 0;
 	if (n == 0)
-	{
-		print_char('0');
-		return (1);
-	}
+		return (print_char('0'));
 	len = n_len(n);
 	if (n >= 16)
 	{
@@ -44,13 +40,13 @@ int ft_printf_hex(unsigned int n, char format)
 	else
 	{
 		if (n <= 9)
-			print_char((n) + '0');
+			print_char(n + '0');
 		else
 		{
 			if (format == 'x')
-				print_char((n - 10) + 'a');
+				print_char(n - 10 + 'a');
 			if (format == 'X')
-				print_char((n - 10) + 'A');
+				print_char(n - 10 + 'A');
 		}
 	}
 	return (len);

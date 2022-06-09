@@ -6,7 +6,7 @@
 /*   By: segarcia <segarcia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 11:16:28 by segarcia          #+#    #+#             */
-/*   Updated: 2022/06/09 11:18:34 by segarcia         ###   ########.fr       */
+/*   Updated: 2022/06/09 12:53:07 by segarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdarg.h>
 # include <unistd.h>
-# include <stdlib.h>
 
 int		ft_printf(const char *str, ...);
 int		print_char(int c);
@@ -25,6 +24,6 @@ char	*ft_uitoa(int n);
 int		ft_printf_int(int n);
 int		ft_printf_uint(unsigned int n);
 int		ft_printf_hex(unsigned int n, char format);
-int 	ft_printf_ptr(unsigned long long ptr);
+int		ft_printf_ptr(unsigned long long ptr);
 
 #endif
