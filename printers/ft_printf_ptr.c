@@ -6,7 +6,7 @@
 /*   By: segarcia <segarcia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 10:59:51 by segarcia          #+#    #+#             */
-/*   Updated: 2022/06/09 14:50:23 by segarcia         ###   ########.fr       */
+/*   Updated: 2022/06/09 14:52:00 by segarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ static void	print_ptr(uintptr_t n)
 {
 	if (n >= 16)
 	{
-		ft_putptr(n / 16);
-		ft_putptr(n % 16);
+		print_ptr(n / 16);
+		print_ptr(n % 16);
 	}
 	else
 	{
