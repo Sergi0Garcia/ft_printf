@@ -6,7 +6,7 @@
 /*   By: segarcia <segarcia@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 10:59:51 by segarcia          #+#    #+#             */
-/*   Updated: 2022/06/09 14:52:35 by segarcia         ###   ########.fr       */
+/*   Updated: 2022/06/10 11:47:12 by segarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	print_ptr(uintptr_t n)
 	}
 	else
 	{
-		if (n <= 9)
+		if (n < 10)
 			ft_printf_char(n + '0');
 		else
 			ft_printf_char(n - 10 + 'a');
